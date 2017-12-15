@@ -62,6 +62,17 @@ const config = {
               options: { sourceMap: true }
             },
             {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: loader => [
+                  require('autoprefixer')(),
+                  require('cssnano')()
+                ],
+                sourceMap: true
+              }
+            },
+            {
               loader: 'sass-loader',
               options: { sourceMap: true }
             }
