@@ -1,0 +1,12 @@
+@mixin respondTo($screen) {
+  $thisScreen: map-get($screens, $screen);
+
+  @if $thisScreen {
+    @media screen and (max-width: $thisScreen) {
+      @content;
+    }
+  } @else {
+    @error 'Invalid screen mentioned.';
+    @error 'Please mention one of: [xs, sm, md, lg, xl]';
+  }
+}
