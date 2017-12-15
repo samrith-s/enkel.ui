@@ -6,8 +6,24 @@
 
   @for $grid-number from 1 to $GRIDS {
     @each $class-name in $GRID-CLASSNAMES {
-      &.#{$class-name}#{$grid-number} {
-        width: (($grid-number / $GRIDS) * $GRID-MAX-SIZE)#{'%'};
+      $calculatedValue: (($grid-number / $GRIDS) * $GRID-MAX-SIZE)#{'%'};
+
+      &.#{$class-name}-#{$grid-number} {
+        width: $calculatedValue;
+      }
+
+      &.#{$class-name}-offset-#{$grid-number} {
+        margin-left: $calculatedValue;
+      }
+
+      @include respondTo($class-name) {
+        &.#{$class-name}-#{$grid-number} {
+          width: $calculatedValue;
+        }
+
+        &.#{$class-name}-offset-#{$grid-number} {
+          margin-left: $calculatedValue;
+        }
       }
     }
   }
