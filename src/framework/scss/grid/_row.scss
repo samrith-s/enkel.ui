@@ -1,0 +1,11 @@
+.row {
+  display: block;
+  min-height: 1px;
+
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
