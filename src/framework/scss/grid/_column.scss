@@ -1,6 +1,14 @@
 .col {
   float: left;
   width: 100%;
-  padding-left: $GUTTER;
-  padding-right: $GUTTER;
+  padding-left: $GRID-GUTTER;
+  padding-right: $GRID-GUTTER;
+
+  @for $grid-number from 1 to $GRIDS {
+    @each $class-name in $GRID-CLASSNAMES {
+      &.#{$class-name}#{$grid-number} {
+        width: (($grid-number / $GRIDS) * $GRID-MAX-SIZE)#{'%'};
+      }
+    }
+  }
 }

@@ -1,2 +1,11 @@
-$MAX-GRID-WIDTH: 100%;
-$GUTTER: 15px;
+//Total grids
+$GRIDS: 12;
+
+//Max size to divide the column by
+$GRID-MAX-SIZE: 100;
+
+//Gutter for each column
+$GRID-GUTTER: 15px;
+
+// Grid classnames
+$GRID_CLASSNAMES: 'xs', 'sm', 'md', 'lg', 'xl';
