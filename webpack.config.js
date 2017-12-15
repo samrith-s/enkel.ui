@@ -19,7 +19,7 @@ const config = {
   },
   devServer: {
     contentBase: path.resolve('dist/static'),
-    stats: 'errors-only',
+    stats: 'minimal',
     open: true,
     port: 1337,
     compress: true
